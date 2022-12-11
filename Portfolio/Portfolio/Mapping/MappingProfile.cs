@@ -1,4 +1,5 @@
-﻿using Portofolio.Dtos;
+﻿using Portfolio.Dtos;
+using Portofolio.Dtos;
 using Portofolio.Entities;
 
 namespace Portofolio.Mapping
@@ -12,6 +13,8 @@ namespace Portofolio.Mapping
                 .ForMember(dest => dest.Company, opts => opts.Ignore()).ReverseMap();
 
             CreateMap<Role, RoleDto>().ReverseMap();
+
+            CreateMap<Company, CompanyDto>().ReverseMap();
         }
     }
 }
