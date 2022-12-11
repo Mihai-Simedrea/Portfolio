@@ -7,7 +7,7 @@ namespace Portofolio.Data
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.;Database=PortofolioDb;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=.;Database=PortfolioDb;Trusted_Connection=True;TrustServerCertificate=True;");
         }
 
         public ApplicationDbContext(DbContextOptions options) : base(options)

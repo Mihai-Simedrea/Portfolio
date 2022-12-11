@@ -2,10 +2,12 @@
 
 #nullable disable
 
-namespace Portofolio.Migrations
+namespace Portfolio.Migrations
 {
+    /// <inheritdoc />
     public partial class InitialMigration : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -73,6 +75,7 @@ namespace Portofolio.Migrations
                 column: "RoleId");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
