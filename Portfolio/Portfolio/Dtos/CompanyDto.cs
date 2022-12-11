@@ -1,4 +1,6 @@
-﻿namespace Portfolio.Dtos
+﻿using Portfolio.Entities;
+
+namespace Portfolio.Dtos
 {
     public class CompanyDto
     {

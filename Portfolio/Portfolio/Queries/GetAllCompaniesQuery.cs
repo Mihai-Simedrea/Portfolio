@@ -29,6 +29,7 @@ namespace Portfolio.Queries
                 var query = await _applicationDbContext.Companies
                     .ToListAsync(cancellationToken);
 
+
                 return _mapper.Map<IReadOnlyList<CompanyDto>>(query);
             }
         }

@@ -63,7 +63,7 @@ namespace Portofolio.Controllers
         }
 
         [HttpPatch]
-        [Route("assign-to-{companyId}-{collaboratorId}")]
+        [Route("assign-{companyId}-{collaboratorId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> AssignCollaboratorToCompany(int companyId, int collaboratorId)
         {
