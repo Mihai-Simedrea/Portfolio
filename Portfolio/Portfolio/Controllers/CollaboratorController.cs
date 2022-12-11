@@ -1,21 +1,17 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Portofolio.Commands.User;
-using Portofolio.Dtos;
-using Portofolio.Queries;
-using static Portfolio.Queries.GetUserByIdQuery;
+using static Portfolio.Queries.GetAllCollaboratorsQuery;
+using static Portfolio.Queries.GetCollaboratorByIdQuery;
 using static Portofolio.Commands.User.CreateCollaboratorCommand;
-using static Portofolio.Commands.User.CreateUserCommand;
-using static Portofolio.Queries.GetAllUsersQuery;
 
 namespace Portofolio.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UserController : ControllerBase
+    public class CollaboratorController : ControllerBase
     {
         private readonly IMediator _mediator;
-        public UserController(IMediator mediator)
+        public CollaboratorController(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -23,7 +19,7 @@ namespace Portofolio.Controllers
         [HttpPost]
         [Route("create")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> Create([FromBody] CreateUserCommandRequest command)
+        public async Task<IActionResult> Create([FromBody] CreateCollaboratorCommandRequest command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);
@@ -34,18 +30,18 @@ namespace Portofolio.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Get()
         {
-            var result = await _mediator.Send(new GetAllUsersQueryRequest());
+            var result = await _mediator.Send(new GetAllCollaboratorsQueryRequest());
             return Ok(result);
         }
 
         [HttpGet]
-        [Route("get-{userId}")]
+        [Route("get-{collaboratorId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> GetUserById(int userId)
+        public async Task<IActionResult> GetUserById(int collaboratorId)
         {
-            var result = await _mediator.Send(new GetUserByIdQueryRequest()
+            var result = await _mediator.Send(new GetCollaboratorByIdQueryRequest()
             {
-                UserId = userId
+                CollaboratorId = collaboratorId
             });
             return Ok(result);
         }

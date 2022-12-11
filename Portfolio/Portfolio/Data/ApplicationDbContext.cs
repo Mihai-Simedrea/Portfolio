@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Portfolio.Entities;
 using Portofolio.Entities;
 
 namespace Portofolio.Data
@@ -18,6 +19,7 @@ namespace Portofolio.Data
         public DbSet<User>? Users { get; set; }
         public DbSet<Role>? Roles { get; set; }
         public DbSet<Company>? Companies { get; set; }
+        public DbSet<Collaborator>? Collaborators { get; set; }
 
     }
 }
