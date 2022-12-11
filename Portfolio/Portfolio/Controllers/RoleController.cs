@@ -6,6 +6,7 @@ using Portofolio.Queries;
 using static Portofolio.Commands.Role.CreateRoleCommand;
 using static Portofolio.Commands.User.AssignRoleToUserCommand;
 using static Portofolio.Queries.GetAllRolesQuery;
+using static Portofolio.Queries.GetRoleByIdQuery;
 
 namespace Portofolio.Controllers
 {
@@ -46,6 +47,18 @@ namespace Portofolio.Controllers
             {
                 RoleId = roleId,
                 UserId = userId
+            });
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("get-{roleId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetRoleById(int roleId)
+        {
+            var result = await _mediator.Send(new GetRoleByIdQueryRequest()
+            {
+                RoleId = roleId
             });
             return Ok(result);
         }
