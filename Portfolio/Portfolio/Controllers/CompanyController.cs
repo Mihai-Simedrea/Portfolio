@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using static Portfolio.Queries.GetAllCompaniesQuery;
 using static Portfolio.Queries.GetCompanyByIdQuery;
-using static Portofolio.Commands.Company.CreateCompanyCommand;
-using static Portofolio.Commands.User.AssignCompanyToUserCommand;
+using static Portfolio.Commands.Collaborator.AssignCompanyToCollaboratorCommand;
+using static Portfolio.Commands.Company.CreateCompanyCommand;
+using static Portfolio.Commands.User.AssignCompanyToUserCommand;
 
 namespace Portofolio.Controllers
 {
@@ -57,6 +58,19 @@ namespace Portofolio.Controllers
             {
                 CompanyId = companyId,
                 UserId = userId
+            });
+            return Ok(result);
+        }
+
+        [HttpPatch]
+        [Route("assign-to-{companyId}-{collaboratorId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> AssignCollaboratorToCompany(int companyId, int collaboratorId)
+        {
+            var result = await _mediator.Send(new AssignCompanyToCollaboratorCommandRequest()
+            {
+                CompanyId = companyId,
+                CollaboratorId = collaboratorId
             });
             return Ok(result);
         }

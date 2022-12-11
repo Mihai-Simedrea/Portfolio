@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
-using Portofolio.Data;
-using Portofolio.Dtos;
-using Portofolio.Entities;
+using Portfolio.Data;
+using Portfolio.Dtos;
 
-namespace Portofolio.Commands.User
+namespace Portfolio.Commands.User
 {
     public class CreateUserCommand
     {

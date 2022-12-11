@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Portofolio.Data;
-using Portofolio.Dtos;
+using Portfolio.Data;
+using Portfolio.Dtos;
 
 namespace Portfolio.Queries
 {

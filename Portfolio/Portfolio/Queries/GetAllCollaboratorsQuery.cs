@@ -2,7 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Dtos;
-using Portofolio.Data;
+using Portfolio.Data;
 
 namespace Portfolio.Queries
 {

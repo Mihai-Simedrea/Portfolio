@@ -1,6 +1,6 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Portofolio.Data;
+using Portfolio.Data;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);

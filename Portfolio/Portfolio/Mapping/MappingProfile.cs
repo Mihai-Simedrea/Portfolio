@@ -1,9 +1,9 @@
 ﻿using Portfolio.Dtos;
 using Portfolio.Entities;
-using Portofolio.Dtos;
-using Portofolio.Entities;
+using Portfolio.Dtos;
+using Portfolio.Entities;
 
-namespace Portofolio.Mapping
+namespace Portfolio.Mapping
 {
     public class MappingProfile : AutoMapper.Profile
     {

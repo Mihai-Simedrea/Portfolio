@@ -1,4 +1,4 @@
-﻿namespace Portofolio.Dtos
+﻿namespace Portfolio.Dtos
 {
     public class RoleDto
     {

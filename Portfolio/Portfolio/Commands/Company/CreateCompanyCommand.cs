@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using MediatR;
 using Portfolio.Dtos;
-using Portofolio.Data;
-using Portofolio.Dtos;
-using Portofolio.Entities;
+using Portfolio.Data;
+using Portfolio.Dtos;
+using Portfolio.Entities;
 
-namespace Portofolio.Commands.Company
+namespace Portfolio.Commands.Company
 {
     public class CreateCompanyCommand
     {

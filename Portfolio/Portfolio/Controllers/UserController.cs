@@ -1,14 +1,14 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Portofolio.Commands.User;
-using Portofolio.Dtos;
-using Portofolio.Queries;
+using Portfolio.Commands.User;
+using Portfolio.Dtos;
+using Portfolio.Queries;
 using static Portfolio.Queries.GetUserByIdQuery;
-using static Portofolio.Commands.User.CreateCollaboratorCommand;
-using static Portofolio.Commands.User.CreateUserCommand;
-using static Portofolio.Queries.GetAllUsersQuery;
+using static Portfolio.Commands.User.CreateCollaboratorCommand;
+using static Portfolio.Commands.User.CreateUserCommand;
+using static Portfolio.Queries.GetAllUsersQuery;
 
-namespace Portofolio.Controllers
+namespace Portfolio.Controllers
 {
     [ApiController]
     [Route("[controller]")]

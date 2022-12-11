@@ -1,4 +1,4 @@
-﻿namespace Portofolio.Entities
+﻿namespace Portfolio.Entities
 {
     public class BaseEntity
     {

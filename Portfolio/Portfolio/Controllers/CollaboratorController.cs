@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using static Portfolio.Queries.GetAllCollaboratorsQuery;
 using static Portfolio.Queries.GetCollaboratorByIdQuery;
-using static Portofolio.Commands.User.CreateCollaboratorCommand;
+using static Portfolio.Commands.User.CreateCollaboratorCommand;
 
 namespace Portofolio.Controllers
 {

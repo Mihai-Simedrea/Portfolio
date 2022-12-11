@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Portofolio.Data;
+using Portfolio.Data;
 
-namespace Portofolio.Commands.User
+namespace Portfolio.Commands.User
 {
     public class AssignCompanyToUserCommand
     {

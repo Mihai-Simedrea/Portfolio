@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using MediatR;
-using Portofolio.Data;
-using Portofolio.Dtos;
-using Portofolio.Entities;
+using Portfolio.Data;
+using Portfolio.Dtos;
+using Portfolio.Entities;
 
-namespace Portofolio.Commands.Role
+namespace Portfolio.Commands.Role
 {
     public class CreateRoleCommand
     {

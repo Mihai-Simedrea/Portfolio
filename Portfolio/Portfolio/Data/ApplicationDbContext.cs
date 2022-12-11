@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Portfolio.Entities;
-using Portofolio.Entities;
 
-namespace Portofolio.Data
+namespace Portfolio.Data
 {
     public class ApplicationDbContext : DbContext
     {
@@ -16,10 +15,27 @@ namespace Portofolio.Data
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CompanyCollaborator>()
+                .HasKey(cc => new { cc.CompanyId, cc.CollaboratorId });
+
+            modelBuilder.Entity<CompanyCollaborator>()
+                .HasOne(cc => cc.Company)
+                .WithMany(c => c.CompanyCollaborators)
+                .HasForeignKey(cc => cc.CompanyId);
+
+            modelBuilder.Entity<CompanyCollaborator>()
+                .HasOne(cc => cc.Collaborator)
+                .WithMany(c => c.CompanyCollaborators)
+                .HasForeignKey(cc => cc.CollaboratorId);
+        }
+
         public DbSet<User>? Users { get; set; }
         public DbSet<Role>? Roles { get; set; }
         public DbSet<Company>? Companies { get; set; }
         public DbSet<Collaborator>? Collaborators { get; set; }
+        public DbSet<CompanyCollaborator>? CompanyCollaborators { get; set; }
 
     }
 }

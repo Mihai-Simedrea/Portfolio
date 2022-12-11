@@ -1,4 +1,5 @@
-﻿namespace Portofolio.Entities
+﻿namespace Portfolio.Entities
+
 {
     public class Role : BaseEntity
     {

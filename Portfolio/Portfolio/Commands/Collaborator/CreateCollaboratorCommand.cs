@@ -2,11 +2,9 @@
 using MediatR;
 using Portfolio.Dtos;
 using Portfolio.Entities;
-using Portofolio.Data;
-using Portofolio.Dtos;
-using Portofolio.Entities;
+using Portfolio.Data;
 
-namespace Portofolio.Commands.User
+namespace Portfolio.Commands.User
 {
     public class CreateCollaboratorCommand
     {
@@ -38,7 +36,7 @@ namespace Portofolio.Commands.User
                 };
 
                 await _applicationDbContext.Collaborators
-                    .AddAsync(_mapper.Map<Collaborator>(collaborator), cancellationToken);
+                    .AddAsync(_mapper.Map<Entities.Collaborator>(collaborator), cancellationToken);
                 await _applicationDbContext.SaveChangesAsync(cancellationToken);
 
                 return collaborator;

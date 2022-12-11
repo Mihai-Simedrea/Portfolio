@@ -1,6 +1,6 @@
-﻿using Portofolio.Entities;
+﻿using Portfolio.Entities;
 
-namespace Portofolio.Dtos
+namespace Portfolio.Dtos
 {
     public class UserDto
     {

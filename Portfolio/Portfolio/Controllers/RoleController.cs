@@ -1,14 +1,14 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Portofolio.Commands.Role;
-using Portofolio.Dtos;
-using Portofolio.Queries;
-using static Portofolio.Commands.Role.CreateRoleCommand;
-using static Portofolio.Commands.User.AssignRoleToUserCommand;
-using static Portofolio.Queries.GetAllRolesQuery;
-using static Portofolio.Queries.GetRoleByIdQuery;
+using Portfolio.Commands.Role;
+using Portfolio.Dtos;
+using Portfolio.Queries;
+using static Portfolio.Commands.Role.CreateRoleCommand;
+using static Portfolio.Commands.User.AssignRoleToUserCommand;
+using static Portfolio.Queries.GetAllRolesQuery;
+using static Portfolio.Queries.GetRoleByIdQuery;
 
-namespace Portofolio.Controllers
+namespace Portfolio.Controllers
 {
     [ApiController]
     [Route("[controller]")]

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Portofolio.Data;
+using Portfolio.Data;
 
 #nullable disable
 
@@ -30,9 +30,6 @@ namespace Portfolio.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CompanyId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -44,9 +41,22 @@ namespace Portfolio.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId");
-
                     b.ToTable("Collaborators");
+                });
+
+            modelBuilder.Entity("Portfolio.Entities.CompanyCollaborator", b =>
+                {
+                    b.Property<int>("CompanyId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CollaboratorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CompanyId", "CollaboratorId");
+
+                    b.HasIndex("CollaboratorId");
+
+                    b.ToTable("CompanyCollaborators");
                 });
 
             modelBuilder.Entity("Portofolio.Entities.Company", b =>
@@ -116,11 +126,21 @@ namespace Portfolio.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Portfolio.Entities.Collaborator", b =>
+            modelBuilder.Entity("Portfolio.Entities.CompanyCollaborator", b =>
                 {
+                    b.HasOne("Portfolio.Entities.Collaborator", "Collaborator")
+                        .WithMany("CompanyCollaborators")
+                        .HasForeignKey("CollaboratorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Portofolio.Entities.Company", "Company")
-                        .WithMany("Collaborators")
-                        .HasForeignKey("CompanyId");
+                        .WithMany("CompanyCollaborators")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Collaborator");
 
                     b.Navigation("Company");
                 });
@@ -140,9 +160,14 @@ namespace Portfolio.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("Portfolio.Entities.Collaborator", b =>
+                {
+                    b.Navigation("CompanyCollaborators");
+                });
+
             modelBuilder.Entity("Portofolio.Entities.Company", b =>
                 {
-                    b.Navigation("Collaborators");
+                    b.Navigation("CompanyCollaborators");
 
                     b.Navigation("Users");
                 });

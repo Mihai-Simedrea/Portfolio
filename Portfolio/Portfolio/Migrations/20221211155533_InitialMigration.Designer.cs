@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Portofolio.Data;
+using Portfolio.Data;
 
 #nullable disable
 
 namespace Portfolio.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221211112853_InitialMigration")]
+    [Migration("20221211155533_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -24,6 +24,43 @@ namespace Portfolio.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Portfolio.Entities.Collaborator", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Collaborators");
+                });
+
+            modelBuilder.Entity("Portfolio.Entities.CompanyCollaborator", b =>
+                {
+                    b.Property<int>("CompanyId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CollaboratorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CompanyId", "CollaboratorId");
+
+                    b.HasIndex("CollaboratorId");
+
+                    b.ToTable("CompanyCollaborators");
+                });
 
             modelBuilder.Entity("Portofolio.Entities.Company", b =>
                 {
@@ -92,6 +129,25 @@ namespace Portfolio.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("Portfolio.Entities.CompanyCollaborator", b =>
+                {
+                    b.HasOne("Portfolio.Entities.Collaborator", "Collaborator")
+                        .WithMany("CompanyCollaborators")
+                        .HasForeignKey("CollaboratorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Portofolio.Entities.Company", "Company")
+                        .WithMany("CompanyCollaborators")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Collaborator");
+
+                    b.Navigation("Company");
+                });
+
             modelBuilder.Entity("Portofolio.Entities.User", b =>
                 {
                     b.HasOne("Portofolio.Entities.Company", "Company")
@@ -107,8 +163,15 @@ namespace Portfolio.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("Portfolio.Entities.Collaborator", b =>
+                {
+                    b.Navigation("CompanyCollaborators");
+                });
+
             modelBuilder.Entity("Portofolio.Entities.Company", b =>
                 {
+                    b.Navigation("CompanyCollaborators");
+
                     b.Navigation("Users");
                 });
 
