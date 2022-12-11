@@ -1,15 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Portfolio.Queries;
-using Portofolio.Commands.Company;
-using Portofolio.Commands.User;
-using Portofolio.Dtos;
-using Portofolio.Queries;
 using static Portfolio.Queries.GetAllCompaniesQuery;
 using static Portfolio.Queries.GetCompanyByIdQuery;
-using static Portfolio.Queries.GetUserByIdQuery;
 using static Portofolio.Commands.Company.CreateCompanyCommand;
-using static Portofolio.Queries.GetAllUsersQuery;
+using static Portofolio.Commands.User.AssignCompanyToUserCommand;
 
 namespace Portofolio.Controllers
 {
@@ -49,6 +43,20 @@ namespace Portofolio.Controllers
             var result = await _mediator.Send(new GetCompanyByIdQueryRequest()
             {
                 CompanyId = companyId
+            });
+            return Ok(result);
+        }
+
+
+        [HttpPatch]
+        [Route("assign-to-{userId}-{companyId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> AssignCompanyToUser(int userId, int companyId)
+        {
+            var result = await _mediator.Send(new AssignCompanyToUserCommandRequest()
+            {
+                CompanyId = companyId,
+                UserId = userId
             });
             return Ok(result);
         }

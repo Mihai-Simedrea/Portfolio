@@ -10,7 +10,7 @@ namespace Portofolio.Mapping
         {
             CreateMap<User, UserDto>()
                 .ForMember(dest => dest.RoleId, opts => opts.MapFrom(x => x.RoleId))
-                .ForMember(dest => dest.Company, opts => opts.Ignore()).ReverseMap();
+                .ForMember(dest => dest.CompanyId, opts => opts.MapFrom(x => x.CompanyId));
 
             CreateMap<Role, RoleDto>().ReverseMap();
 

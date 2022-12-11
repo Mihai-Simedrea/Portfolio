@@ -35,7 +35,7 @@ namespace Portfolio.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Companies", (string)null);
                 });
 
             modelBuilder.Entity("Portofolio.Entities.Role", b =>
@@ -51,7 +51,7 @@ namespace Portfolio.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Roles", (string)null);
                 });
 
             modelBuilder.Entity("Portofolio.Entities.User", b =>
@@ -86,7 +86,7 @@ namespace Portfolio.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Portofolio.Entities.User", b =>

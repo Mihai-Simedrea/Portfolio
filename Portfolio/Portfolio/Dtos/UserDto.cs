@@ -10,6 +10,6 @@ namespace Portofolio.Dtos
         public string? Quote { get; set; }
         public string? Email { get; set; }
         public int? RoleId { get; set; }
-        public string? Company { get; set; }
+        public int? CompanyId { get; set; }
     }
 }
