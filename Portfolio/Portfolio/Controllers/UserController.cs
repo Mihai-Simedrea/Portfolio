@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Portofolio.Commands.User;
 using Portofolio.Dtos;
 using Portofolio.Queries;
+using static Portfolio.Queries.GetUserByIdQuery;
 using static Portofolio.Commands.User.CreateUserCommand;
 using static Portofolio.Queries.GetAllUsersQuery;
 
@@ -33,6 +34,18 @@ namespace Portofolio.Controllers
         public async Task<IActionResult> Get()
         {
             var result = await _mediator.Send(new GetAllUsersQueryRequest());
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("get-{userId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetUserById(int userId)
+        {
+            var result = await _mediator.Send(new GetUserByIdQueryRequest()
+            {
+                UserId = userId
+            });
             return Ok(result);
         }
     }
