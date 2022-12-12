@@ -5,6 +5,8 @@ using static Portfolio.Queries.GetCompanyByIdQuery;
 using static Portfolio.Commands.Collaborator.AssignCompanyToCollaboratorCommand;
 using static Portfolio.Commands.Company.CreateCompanyCommand;
 using static Portfolio.Commands.User.AssignCompanyToUserCommand;
+using Portfolio.Queries;
+using static Portfolio.Queries.GetAllCollaboratorsForCompanyQuery;
 
 namespace Portofolio.Controllers
 {
@@ -71,6 +73,18 @@ namespace Portofolio.Controllers
             {
                 CompanyId = companyId,
                 CollaboratorId = collaboratorId
+            });
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("{companyId}/collaborators")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetAllCollaboratorsForCompany(int companyId)
+        {
+            var result = await _mediator.Send(new GetAllCollaboratorsForCompanyQueryRequest()
+            {
+                CompanyId = companyId
             });
             return Ok(result);
         }
