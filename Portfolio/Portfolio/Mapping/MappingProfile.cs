@@ -1,7 +1,5 @@
 ﻿using Portfolio.Dtos;
 using Portfolio.Entities;
-using Portfolio.Dtos;
-using Portfolio.Entities;
 
 namespace Portfolio.Mapping
 {
@@ -9,9 +7,7 @@ namespace Portfolio.Mapping
     {
         public MappingProfile()
         {
-            CreateMap<User, UserDto>()
-                .ForMember(dest => dest.RoleId, opts => opts.MapFrom(x => x.RoleId))
-                .ForMember(dest => dest.CompanyId, opts => opts.MapFrom(x => x.CompanyId));
+            CreateMap<User, UserDto>().ReverseMap();
             CreateMap<Role, RoleDto>().ReverseMap();
             CreateMap<Company, CompanyDto>().ReverseMap();
             CreateMap<Collaborator, CollaboratorDto>().ReverseMap();

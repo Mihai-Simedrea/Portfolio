@@ -50,7 +50,7 @@ namespace Portofolio.Controllers
 
 
         [HttpPatch]
-        [Route("assign-to-{userId}-{companyId}")]
+        [Route("user/{userId}/{companyId}/assign")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> AssignCompanyToUser(int userId, int companyId)
         {
@@ -63,7 +63,7 @@ namespace Portofolio.Controllers
         }
 
         [HttpPatch]
-        [Route("assign-{companyId}-{collaboratorId}")]
+        [Route("company/{companyId}/{collaboratorId}/assign")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> AssignCollaboratorToCompany(int companyId, int collaboratorId)
         {
