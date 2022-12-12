@@ -12,7 +12,7 @@ using Portfolio.Data;
 namespace Portfolio.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221211155533_InitialMigration")]
+    [Migration("20221212225911_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -47,22 +47,7 @@ namespace Portfolio.Migrations
                     b.ToTable("Collaborators");
                 });
 
-            modelBuilder.Entity("Portfolio.Entities.CompanyCollaborator", b =>
-                {
-                    b.Property<int>("CompanyId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CollaboratorId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CompanyId", "CollaboratorId");
-
-                    b.HasIndex("CollaboratorId");
-
-                    b.ToTable("CompanyCollaborators");
-                });
-
-            modelBuilder.Entity("Portofolio.Entities.Company", b =>
+            modelBuilder.Entity("Portfolio.Entities.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -78,7 +63,22 @@ namespace Portfolio.Migrations
                     b.ToTable("Companies");
                 });
 
-            modelBuilder.Entity("Portofolio.Entities.Role", b =>
+            modelBuilder.Entity("Portfolio.Entities.CompanyCollaborator", b =>
+                {
+                    b.Property<int>("CompanyId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CollaboratorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CompanyId", "CollaboratorId");
+
+                    b.HasIndex("CollaboratorId");
+
+                    b.ToTable("CompanyCollaborators");
+                });
+
+            modelBuilder.Entity("Portfolio.Entities.Role", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -94,7 +94,7 @@ namespace Portfolio.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("Portofolio.Entities.User", b =>
+            modelBuilder.Entity("Portfolio.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -137,7 +137,7 @@ namespace Portfolio.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Portofolio.Entities.Company", "Company")
+                    b.HasOne("Portfolio.Entities.Company", "Company")
                         .WithMany("CompanyCollaborators")
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -148,13 +148,13 @@ namespace Portfolio.Migrations
                     b.Navigation("Company");
                 });
 
-            modelBuilder.Entity("Portofolio.Entities.User", b =>
+            modelBuilder.Entity("Portfolio.Entities.User", b =>
                 {
-                    b.HasOne("Portofolio.Entities.Company", "Company")
+                    b.HasOne("Portfolio.Entities.Company", "Company")
                         .WithMany("Users")
                         .HasForeignKey("CompanyId");
 
-                    b.HasOne("Portofolio.Entities.Role", "Role")
+                    b.HasOne("Portfolio.Entities.Role", "Role")
                         .WithMany("Users")
                         .HasForeignKey("RoleId");
 
@@ -168,14 +168,14 @@ namespace Portfolio.Migrations
                     b.Navigation("CompanyCollaborators");
                 });
 
-            modelBuilder.Entity("Portofolio.Entities.Company", b =>
+            modelBuilder.Entity("Portfolio.Entities.Company", b =>
                 {
                     b.Navigation("CompanyCollaborators");
 
                     b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("Portofolio.Entities.Role", b =>
+            modelBuilder.Entity("Portfolio.Entities.Role", b =>
                 {
                     b.Navigation("Users");
                 });
