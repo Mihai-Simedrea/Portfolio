@@ -1,0 +1,13 @@
+// styles.scss
+header {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 24px;
+    box-sizing: border-box;
+  
+    mat-toolbar {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
