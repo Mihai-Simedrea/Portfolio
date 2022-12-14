@@ -11,6 +11,7 @@ namespace Portfolio.Mapping
             CreateMap<Role, RoleDto>().ReverseMap();
             CreateMap<Company, CompanyDto>().ReverseMap();
             CreateMap<Collaborator, CollaboratorDto>().ReverseMap();
+            CreateMap<Section, SectionDto>().ReverseMap();
         }
     }
 }

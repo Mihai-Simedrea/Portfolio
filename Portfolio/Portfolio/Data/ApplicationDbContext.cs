@@ -36,6 +36,7 @@ namespace Portfolio.Data
         public DbSet<Company>? Companies { get; set; }
         public DbSet<Collaborator>? Collaborators { get; set; }
         public DbSet<CompanyCollaborator>? CompanyCollaborators { get; set; }
+        public DbSet<Section>? Sections { get; set; }
 
     }
 }
