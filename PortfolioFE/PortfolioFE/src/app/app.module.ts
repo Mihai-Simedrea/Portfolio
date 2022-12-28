@@ -8,9 +8,11 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { CardHolderComponent } from './shared/components/card-holder/card-holder.component';
+import { SectionComponent } from './shared/components/section/section.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, CardHolderComponent, SectionComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
