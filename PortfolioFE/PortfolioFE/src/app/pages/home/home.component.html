@@ -1,5 +1,34 @@
 <app-header></app-header>
 
+<div class="navbar">
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile
+      ><app-card-holder
+        [title]="'Me'"
+        [animation]="'fade-right'"
+      ></app-card-holder
+    ></mat-grid-tile>
+    <mat-grid-tile
+      ><app-card-holder
+        [title]="'Ambition'"
+        [animation]="'fade-right'"
+      ></app-card-holder
+    ></mat-grid-tile>
+    <mat-grid-tile
+      ><app-card-holder
+        [title]="'Utopia'"
+        [animation]="'fade-left'"
+      ></app-card-holder
+    ></mat-grid-tile>
+    <mat-grid-tile
+      ><app-card-holder
+        [title]="'Dismay'"
+        [animation]="'fade-left'"
+      ></app-card-holder
+    ></mat-grid-tile>
+  </mat-grid-list>
+</div>
+
 <app-section
   [showImage]="true"
   [title]="titles[0]"

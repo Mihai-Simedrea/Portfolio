@@ -1,8 +1,31 @@
 .example-card {
-    max-width: 400px;
+    width: 300px;
+    height: 50px;
+
 }
   
 .example-header-image {
     background-image: url('https://padletuploads.blob.core.windows.net/prod/338313757/xv9cNVhJOnCldshv-zjMjA/f41906143bc5eb004cac88418b2a97a7.jpeg');
     background-size: cover;
+}
+
+
+.text {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+}
+
+hr {
+    color: white;
+}
+
+mat-card {
+    background: #E0B580;
+}
+
+mat-card-content {
+    background: #E0B580;
 }
