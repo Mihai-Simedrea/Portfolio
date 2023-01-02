@@ -8,19 +8,19 @@
         [animation]="'fade-right'"
       ></app-card-holder
     ></mat-grid-tile>
-    <mat-grid-tile
+    <mat-grid-tile (click)="scroll(ambitionRef)"
       ><app-card-holder
         [title]="'Ambition'"
         [animation]="'fade-right'"
       ></app-card-holder
     ></mat-grid-tile>
-    <mat-grid-tile
+    <mat-grid-tile (click)="scroll(utopiaRef)"
       ><app-card-holder
         [title]="'Utopia'"
         [animation]="'fade-left'"
       ></app-card-holder
     ></mat-grid-tile>
-    <mat-grid-tile
+    <mat-grid-tile (click)="scroll(dismayRef)"
       ><app-card-holder
         [title]="'Dismay'"
         [animation]="'fade-left'"
@@ -29,41 +29,49 @@
   </mat-grid-list>
 </div>
 
-<app-section
-  [showImage]="true"
-  [title]="titles[0]"
-  [sectionTitle]="sections.titles[0]"
-  [sectionSubtitle]="sections.subtitles[0]"
-  [sectionDescription]="sections.description[0]"
-  [url]="imageUrl"
-  [isVideo]="false"
-></app-section>
-<app-section
-  [showImage]="false"
-  [title]="titles[1]"
-  [sectionTitle]="sections.titles[1]"
-  [sectionSubtitle]="sections.subtitles[1]"
-  [sectionDescription]="sections.description[1]"
-  [url]="videoUrl"
-  [isVideo]="true"
-></app-section>
-<app-section
-  [showImage]="true"
-  [title]="titles[2]"
-  [sectionTitle]="sections.titles[0]"
-  [sectionSubtitle]="sections.subtitles[0]"
-  [sectionDescription]="sections.description[0]"
-  [url]="videoUrl"
-  [isVideo]="true"
-></app-section>
-<app-section
-  [showImage]="false"
-  [title]="titles[3]"
-  [sectionTitle]="sections.titles[0]"
-  [sectionSubtitle]="sections.subtitles[0]"
-  [sectionDescription]="sections.description[0]"
-  [url]="videoUrl"
-  [isVideo]="true"
-></app-section>
+<div #meRef>
+  <app-section
+    [showImage]="true"
+    [title]="titles[0]"
+    [sectionTitle]="sections.titles[0]"
+    [sectionSubtitle]="sections.subtitles[0]"
+    [sectionDescription]="sections.description[0]"
+    [url]="imageUrl"
+    [isVideo]="false"
+  ></app-section>
+</div>
+<div #ambitionRef>
+  <app-section
+    [showImage]="false"
+    [title]="titles[1]"
+    [sectionTitle]="sections.titles[1]"
+    [sectionSubtitle]="sections.subtitles[1]"
+    [sectionDescription]="sections.description[1]"
+    [url]="videoUrl"
+    [isVideo]="true"
+  ></app-section>
+</div>
+<div #utopiaRef>
+  <app-section
+    [showImage]="true"
+    [title]="titles[2]"
+    [sectionTitle]="sections.titles[0]"
+    [sectionSubtitle]="sections.subtitles[0]"
+    [sectionDescription]="sections.description[0]"
+    [url]="videoUrl"
+    [isVideo]="true"
+  ></app-section>
+</div>
+<div #dismayRef>
+  <app-section
+    [showImage]="false"
+    [title]="titles[3]"
+    [sectionTitle]="sections.titles[0]"
+    [sectionSubtitle]="sections.subtitles[0]"
+    [sectionDescription]="sections.description[0]"
+    [url]="videoUrl"
+    [isVideo]="true"
+  ></app-section>
+</div>
 
 <app-footer></app-footer>

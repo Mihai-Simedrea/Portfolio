@@ -47,4 +47,8 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 }
