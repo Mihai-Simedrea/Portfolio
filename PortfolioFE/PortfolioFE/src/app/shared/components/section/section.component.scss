@@ -41,6 +41,13 @@
     gap: 10px;
     grid-template-columns: 2fr 1fr;
   }
+
+  .no__image__grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 2fr;
+  }
+
   .main {
     background: white;
   }

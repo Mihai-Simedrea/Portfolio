@@ -39,15 +39,29 @@
 </div>
 
 <ng-template #noImage>
-  <article class="main">
-    <p class="title" data-aos="fade-left" data-aos-duration="1000">
-      {{ sectionTitle }}
-    </p>
-    <p class="subtitle" data-aos="fade-left" data-aos-duration="1000">
-      {{ sectionSubtitle }}
-    </p>
-    <p class="description" data-aos="fade-left" data-aos-duration="1000">
-      {{ sectionDescription }}
-    </p>
-  </article>
+  <div class="no__image__grid">
+    <section class="side" data-aos="fade-up">
+      <mat-card>
+        <mat-card-content
+          ><img
+            mat-card-image
+            src="https://scontent.fomr1-1.fna.fbcdn.net/v/t1.6435-9/172875203_1610895769105633_5707496466293632507_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHzRpkETadBr-puV28Q7iUg1Q2W3izxs_PVDZbeLPGz81GF2HSlZdnE3a8jXe3DB6s9IJKNuBbjHNwzPlR9_8iH&_nc_ohc=NWqkQH7VuQIAX-4kDqH&_nc_ht=scontent.fomr1-1.fna&oh=00_AfC3MGUpWPdYjce4uegSZpZfschmHoGNFkkH5pSBImcrDw&oe=63D987F8"
+            alt="quote"
+          />
+          {{ quote }}</mat-card-content
+        >
+      </mat-card>
+    </section>
+    <article class="main">
+      <p class="title" data-aos="fade-left" data-aos-duration="1000">
+        {{ sectionTitle }}
+      </p>
+      <p class="subtitle" data-aos="fade-left" data-aos-duration="1000">
+        {{ sectionSubtitle }}
+      </p>
+      <p class="description" data-aos="fade-left" data-aos-duration="1000">
+        {{ sectionDescription }}
+      </p>
+    </article>
+  </div>
 </ng-template>
