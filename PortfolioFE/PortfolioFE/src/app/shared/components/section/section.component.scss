@@ -96,9 +96,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #c39a68;
   }
   
   mat-card-content {
     text-align: center;
     font-style: italic;
+    background: #c39a68;
+    color: white;
+    font-weight: 500;
   }
