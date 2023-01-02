@@ -1,13 +1,7 @@
 <app-header></app-header>
 
 <div class="navbar">
-  <mat-grid-list cols="4" rowHeight="65px">
-    <mat-grid-tile
-      ><app-card-holder
-        [title]="'Me'"
-        [animation]="'fade-right'"
-      ></app-card-holder
-    ></mat-grid-tile>
+  <mat-grid-list cols="3" rowHeight="65px">
     <mat-grid-tile (click)="scroll(ambitionRef)"
       ><app-card-holder
         [title]="'Ambition'"
