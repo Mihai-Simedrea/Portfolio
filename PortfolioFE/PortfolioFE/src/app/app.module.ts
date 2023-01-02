@@ -10,14 +10,23 @@ import { MaterialModule } from './material.module';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { CardHolderComponent } from './shared/components/card-holder/card-holder.component';
 import { SectionComponent } from './shared/components/section/section.component';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, CardHolderComponent, SectionComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    CardHolderComponent,
+    SectionComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ScrollToModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

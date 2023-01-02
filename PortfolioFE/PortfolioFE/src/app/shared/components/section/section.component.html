@@ -6,14 +6,14 @@
   </div>
 </div>
 <div class="grid" *ngIf="showImage; else noImage">
-  <article class="main">
+  <article class="main" data-aos="fade-right">
     <p class="title">{{ sectionTitle }}</p>
     <p class="subtitle">{{ sectionSubtitle }}</p>
     <p class="description">
       {{ sectionDescription }}
     </p>
   </article>
-  <section class="side">
+  <section class="side" data-aos="fade-up">
     <mat-card>
       <mat-card-content
         ><img
