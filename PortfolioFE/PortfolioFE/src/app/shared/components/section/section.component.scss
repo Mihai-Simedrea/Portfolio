@@ -76,6 +76,9 @@
     .grid {
       grid-template-columns: 1fr;
     }
+    .no__image__grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media only screen and (max-width: 600px) {
@@ -83,8 +86,11 @@
       display: none;
     }
     .grid {
-        grid-template-columns: 3fr;
-      }
+      grid-template-columns: 3fr;
+    }
+    .no__image__grid {
+      grid-template-columns: 3fr;
+    }
   }
 
   .title {
