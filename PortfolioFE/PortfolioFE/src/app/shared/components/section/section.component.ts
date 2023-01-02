@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-section',
@@ -13,8 +14,16 @@ export class SectionComponent implements OnInit {
   @Input() sectionTitle = '';
   @Input() sectionSubtitle = '';
   @Input() sectionDescription = '';
+  @Input() url = '';
+  @Input() isVideo = false;
 
-  constructor() {}
+  constructor(private sanitizer: DomSanitizer) {
+    this.sanitizer = sanitizer;
+  }
 
   ngOnInit(): void {}
+
+  getUrl() {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
+  }
 }
