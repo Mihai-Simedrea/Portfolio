@@ -7,6 +7,12 @@
   background-color: white;
 }
 
+header {
+  position: sticky;
+  top: 0; /* Stick the header to the top of the viewport */
+  z-index: 1; /* Place the header above other elements on the page */
+}
+
 .logo__img {
   object-fit: contain; /* adjust to fit the container */
   margin-bottom: 50px;
