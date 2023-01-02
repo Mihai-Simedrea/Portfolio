@@ -24,7 +24,11 @@
   .separator .line {
     height: 3px;
     flex: 1;
-    background-color: #E0B580;
+    background: rgb(224,181,128);
+    background: -moz-linear-gradient(90deg, rgba(224,181,128,1) 0%, rgba(219,193,119,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(224,181,128,1) 0%, rgba(219,193,119,1) 100%);
+    background: linear-gradient(90deg, rgba(224,181,128,1) 0%, rgba(219,193,119,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e0b580",endColorstr="#dbc177",GradientType=1); 
     border-radius: 25px;
   }
     
@@ -32,8 +36,11 @@
     padding: 0 2rem;
     font-size: 23px;
     padding-top: 10px;
-    color: #E0B580;
-    font-weight: bold;
+    color: rgb(224,181,128);
+    color: -moz-linear-gradient(90deg, rgba(224,181,128,1) 0%, rgba(219,193,119,1) 100%);
+    color: -webkit-linear-gradient(90deg, rgba(224,181,128,1) 0%, rgba(219,193,119,1) 100%);
+    color : linear-gradient(90deg, rgba(224,181,128,1) 0%, rgba(219,193,119,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e0b580",endColorstr="#dbc177",GradientType=1); 
   }
 
   .grid {
@@ -51,9 +58,15 @@
   .main {
     background: white;
   }
+
   .side {
-    background: #E0B580;
+    background: rgb(224,181,128);
+    background: -moz-linear-gradient(90deg, rgba(224,181,128,1) 0%, rgba(219,193,119,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(224,181,128,1) 0%, rgba(219,193,119,1) 100%);
+    background: linear-gradient(90deg, rgba(224,181,128,1) 0%, rgba(219,193,119,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e0b580",endColorstr="#dbc177",GradientType=1); 
   }
+  
   .main,
   .side {
     padding: 2%;
@@ -96,13 +109,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #c39a68;
+    background: none;
   }
   
   mat-card-content {
     text-align: center;
     font-style: italic;
-    background: #c39a68;
+    background: none;
     color: white;
     font-weight: 500;
   }

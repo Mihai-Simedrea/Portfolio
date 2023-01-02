@@ -4,7 +4,11 @@
   align-items: center;
   width: 100%;
   height: 150px;
-  background-color: white;
+  background: rgb(255,255,255);
+  background: -moz-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5606443260898109) 96%, rgba(254,254,254,0) 100%);
+  background: -webkit-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5606443260898109) 96%, rgba(254,254,254,0) 100%);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5606443260898109) 96%, rgba(254,254,254,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#fefefe",GradientType=1); 
 }
 
 header {
