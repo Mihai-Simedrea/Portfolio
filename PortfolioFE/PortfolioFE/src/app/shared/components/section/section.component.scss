@@ -1,7 +1,97 @@
-.container {
+
+
+  .about__me__section {
+    display: flex; /* Add display: flex to the about__me__section div */
+    align-items: flex-start; /* Align the separator elements to the top of the about__me__section div */
+    justify-content: center; /* Align the separator elements horizontally */
     margin-top: 10px;
     position: relative;
     width: 100%;
-    height: 300px; 
+    height: 85px;
     background: white;
-}
+    border-radius: 25px 25px 0 0;
+    overflow: auto;
+  }
+  
+  .separator {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    width: 85%;
+    justify-content: center;
+  }
+  
+  .separator .line {
+    height: 3px;
+    flex: 1;
+    background-color: #E0B580;
+    border-radius: 25px;
+  }
+    
+  .separator h2 {
+    padding: 0 2rem;
+    font-size: 23px;
+    padding-top: 10px;
+    color: #E0B580;
+    font-weight: bold;
+  }
+
+  .grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 2fr 1fr;
+  }
+  .main {
+    background: white;
+  }
+  .side {
+    background: #E0B580;
+  }
+  .main,
+  .side {
+    padding: 2%;
+  }
+  
+  @media(max-width: 400px){
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .side {
+      display: none;
+    }
+    .grid {
+        grid-template-columns: 3fr;
+      }
+  }
+
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: gray;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  mat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  mat-card-content {
+    text-align: center;
+    font-style: italic;
+  }

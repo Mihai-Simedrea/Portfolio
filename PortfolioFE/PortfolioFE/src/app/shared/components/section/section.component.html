@@ -1,1 +1,38 @@
-<div class="container"></div>
+<div class="about__me__section">
+  <div class="separator">
+    <div class="line"></div>
+    <h2>{{ title }}</h2>
+    <div class="line"></div>
+  </div>
+</div>
+<div class="grid" *ngIf="showImage; else noImage">
+  <article class="main">
+    <p class="title">{{ sectionTitle }}</p>
+    <p class="subtitle">{{ sectionSubtitle }}</p>
+    <p class="description">
+      {{ sectionDescription }}
+    </p>
+  </article>
+  <section class="side">
+    <mat-card>
+      <mat-card-content
+        ><img
+          mat-card-image
+          src="https://scontent.fomr1-1.fna.fbcdn.net/v/t1.6435-9/172875203_1610895769105633_5707496466293632507_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHzRpkETadBr-puV28Q7iUg1Q2W3izxs_PVDZbeLPGz81GF2HSlZdnE3a8jXe3DB6s9IJKNuBbjHNwzPlR9_8iH&_nc_ohc=NWqkQH7VuQIAX-4kDqH&_nc_ht=scontent.fomr1-1.fna&oh=00_AfC3MGUpWPdYjce4uegSZpZfschmHoGNFkkH5pSBImcrDw&oe=63D987F8"
+          alt="quote"
+        />
+        {{ quote }}</mat-card-content
+      >
+    </mat-card>
+  </section>
+</div>
+
+<ng-template #noImage>
+  <article class="main">
+    <p class="title">{{ sectionTitle }}</p>
+    <p class="subtitle">{{ sectionSubtitle }}</p>
+    <p class="description">
+      {{ sectionDescription }}
+    </p>
+  </article>
+</ng-template>
