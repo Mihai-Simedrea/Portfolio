@@ -9,7 +9,12 @@ export class HomeComponent implements OnInit {
   quote =
     '"Ambition fuels hope in the face of dismay, leading us towards utopia."';
 
-  titles = ['The Mystery of the Self', 'The Ambition Algorithm'];
+  titles = [
+    'The Mystery of the Self',
+    'The Ambition Algorithm',
+    'From Utopian Dreams to AI Reality: The Journey Ahead',
+    'Embracing the Dismay of Uncertainty',
+  ];
   sections = {
     titles: ['Mihai Simedrea', 'test'],
     subtitles: ['CEO of Simedrea Industries', 'quote'],
