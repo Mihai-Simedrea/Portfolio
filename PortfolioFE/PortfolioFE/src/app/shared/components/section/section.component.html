@@ -47,7 +47,7 @@
 </div>
 
 <ng-template #noImage>
-  <div class="no__image__grid">
+  <div class="no__image__grid" *ngIf="!isSmallScreen; else smallScreen">
     <section class="side" data-aos="fade-up">
       <mat-card>
         <mat-card-content *ngIf="!isVideo; else video"
@@ -79,4 +79,36 @@
       <hr data-aos="fade-left" data-aos-duration="1600" />
     </article>
   </div>
+  <ng-template #smallScreen>
+    <article class="main">
+      <p class="title" data-aos="fade-left" data-aos-duration="1000">
+        {{ sectionTitle }}
+      </p>
+      <p class="subtitle" data-aos="fade-left" data-aos-duration="1000">
+        {{ sectionSubtitle }}
+      </p>
+      <p class="description" data-aos="fade-left" data-aos-duration="1000">
+        {{ sectionDescription }}
+      </p>
+      <hr data-aos="fade-left" data-aos-duration="1600" />
+    </article>
+    <section class="side" data-aos="fade-up">
+      <mat-card>
+        <mat-card-content *ngIf="!isVideo; else video"
+          ><img mat-card-image [src]="url" alt="quote" />
+        </mat-card-content>
+        <ng-template #video>
+          <iframe
+            width="100%"
+            height="300px"
+            [src]="getUrl()"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </ng-template>
+      </mat-card>
+    </section>
+  </ng-template>
 </ng-template>

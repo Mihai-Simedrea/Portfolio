@@ -16,12 +16,20 @@ export class SectionComponent implements OnInit {
   @Input() sectionDescription = '';
   @Input() url = '';
   @Input() isVideo = false;
+  isSmallScreen = false;
 
   constructor(private sanitizer: DomSanitizer) {
     this.sanitizer = sanitizer;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isSmallScreen = this.checkIfSmallScreen();
+  }
+
+  checkIfSmallScreen(): boolean {
+    const mq = window.matchMedia('(max-width: 600px)');
+    return mq.matches;
+  }
 
   getUrl() {
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.url);

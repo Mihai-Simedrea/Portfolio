@@ -83,7 +83,7 @@
 
   @media only screen and (max-width: 600px) {
     .side {
-      display: none;
+      display: block;
     }
     .grid {
       grid-template-columns: 3fr;
