@@ -15,7 +15,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(x =>
     x.UseSqlServer("connString"), ServiceLifetime.Singleton);
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddMediatR(typeof(Program));
-
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        builder =>
+        {
+            builder.WithOrigins("https://localhost:7009", "http://localhost:4200")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+        });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,6 +35,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthorization();
 
