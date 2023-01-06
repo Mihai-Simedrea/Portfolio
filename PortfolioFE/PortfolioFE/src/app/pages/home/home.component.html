@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="navbar">
-  <mat-grid-list cols="3" rowHeight="65px">
+  <mat-grid-list cols="4" rowHeight="65px">
     <mat-grid-tile (click)="scroll(ambitionRef)"
       ><app-card-holder
         [title]="'Ambition'"
@@ -17,6 +17,12 @@
     <mat-grid-tile (click)="scroll(dismayRef)"
       ><app-card-holder
         [title]="'Dismay'"
+        [animation]="'fade-left'"
+      ></app-card-holder
+    ></mat-grid-tile>
+    <mat-grid-tile (click)="scroll(partenersRef)"
+      ><app-card-holder
+        [title]="'Parteners'"
         [animation]="'fade-left'"
       ></app-card-holder
     ></mat-grid-tile>
@@ -60,6 +66,17 @@
   <app-section
     [showImage]="false"
     [title]="titles[3]"
+    [sectionTitle]="sections.titles[0]"
+    [sectionSubtitle]="sections.subtitles[0]"
+    [sectionDescription]="sections.description[0]"
+    [url]="videoUrl"
+    [isVideo]="true"
+  ></app-section>
+</div>
+<div #partenersRef>
+  <app-section
+    [showImage]="true"
+    [title]="titles[4]"
     [sectionTitle]="sections.titles[0]"
     [sectionSubtitle]="sections.subtitles[0]"
     [sectionDescription]="sections.description[0]"

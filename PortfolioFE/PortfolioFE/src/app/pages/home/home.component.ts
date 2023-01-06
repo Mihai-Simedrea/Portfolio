@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
     'The Ambition Algorithm',
     'From Utopian Dreams to AI Reality: The Journey Ahead',
     'Embracing the Dismay of Uncertainty',
+    'Parteners',
   ];
   sections = {
     titles: ['Mihai Simedrea', 'test'],
