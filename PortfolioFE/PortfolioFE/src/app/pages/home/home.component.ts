@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/api';
 
 @Component({
   selector: 'app-home',
@@ -44,9 +45,11 @@ export class HomeComponent implements OnInit {
   imageUrl = `https://scontent.fomr1-1.fna.fbcdn.net/v/t1.6435-9/172875203_1610895769105633_5707496466293632507_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHzRpkETadBr-puV28Q7iUg1Q2W3izxs_PVDZbeLPGz81GF2HSlZdnE3a8jXe3DB6s9IJKNuBbjHNwzPlR9_8iH&_nc_ohc=NWqkQH7VuQIAX-4kDqH&_nc_ht=scontent.fomr1-1.fna&oh=00_AfC3MGUpWPdYjce4uegSZpZfschmHoGNFkkH5pSBImcrDw&oe=63D987F8`;
   videoUrl = `https://www.youtube.com/embed/pio6C9tL2SU`;
 
-  constructor() {}
+  constructor(private readonly userService: UserService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userService.getAll().subscribe((x: any) => console.log(x));
+  }
 
   scroll(el: HTMLElement) {
     el.scrollIntoView({ behavior: 'smooth', block: 'center' });

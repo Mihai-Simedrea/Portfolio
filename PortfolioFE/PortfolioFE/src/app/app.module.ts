@@ -11,6 +11,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { CardHolderComponent } from './shared/components/card-holder/card-holder.component';
 import { SectionComponent } from './shared/components/section/section.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule,
     ScrollToModule.forRoot(),
   ],
   providers: [],
